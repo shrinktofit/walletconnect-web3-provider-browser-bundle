@@ -9,11 +9,9 @@ export default {
     input: './index.js',
     plugins: [
         {
+            // https://github.com/souldreamer/xhr2-cookies/issues/11
             name: `kill-${XHR2_COOKIES}`,
             resolveId(source) {
-                // if (source === 'web3-provider-engine') {
-                //     debugger;
-                // }
                 if (source === XHR2_COOKIES) {
                     return source;
                 }
